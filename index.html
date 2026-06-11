@@ -10,23 +10,25 @@
   <a class="skip-nav" href="#main-content">Skip to main content</a>
 
   <header class="site-header">
-    <div class="site-title">Edgerton Emergency Services</div>
-    <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-nav">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    <nav id="site-nav" class="site-nav" aria-label="Main navigation">
-      <ul>
-        <li><a href="index.html" aria-current="page">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="alerts.html">Alerts</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+    <div class="header-inner">
+      <div class="site-title">Edgerton Emergency Services</div>
+      <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="alerts.html">Alerts</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <div class="emergency-banner" role="alert" aria-live="polite">
+  <div class="emergency-banner" role="alert">
     <strong>Emergency? Call 911 immediately.</strong> For non-emergency calls, see <a href="contact.html">our contact page</a>.
   </div>
 
@@ -42,28 +44,30 @@
         <article class="card">
           <h3>🔥 Fire Department</h3>
           <p>24/7 fire suppression, rescue, and hazmat response.</p>
-          <a href="services.html#fire">Learn more</a>
+          <a href="services.html#fire">Learn more <span class="sr-only">about Fire Department</span></a>
         </article>
         <article class="card">
           <h3>🚑 Emergency Medical Services</h3>
           <p>Advanced life support and rapid response ambulance service.</p>
-          <a href="services.html#ems">Learn more</a>
+          <a href="services.html#ems">Learn more <span class="sr-only">about Emergency Medical Services</span></a>
         </article>
         <article class="card">
           <h3>🚔 Police Department</h3>
           <p>Community-focused law enforcement protecting Edgerton residents.</p>
-          <a href="services.html#police">Learn more</a>
+          <a href="services.html#police">Learn more <span class="sr-only">about Police Department</span></a>
         </article>
       </div>
     </section>
 
     <section class="page-section" aria-labelledby="alerts-heading">
       <h2 id="alerts-heading">Latest Alert</h2>
-      <div class="alert-item">
-        <span class="alert-date">Jun 10, 2026</span>
-        <span class="alert-type">Road Closure</span>
-        <span class="alert-desc">Mill Street closed for water main repair. Use Dodge Street as alternate route.</span>
-      </div>
+      <ul class="alert-list">
+        <li class="alert-item">
+          <span class="alert-date">Jun 10, 2026</span>
+          <span class="alert-type">Road Closure</span>
+          <span class="alert-desc">Mill Street closed for water main repair. Use Dodge Street as alternate route.</span>
+        </li>
+      </ul>
       <p><a href="alerts.html">View all alerts →</a></p>
     </section>
   </main>
