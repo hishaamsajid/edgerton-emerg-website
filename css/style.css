@@ -1,5 +1,5 @@
 /* ===================================================
-   Emergency Dental Care — Stylesheet
+   Edgerton Dental Emergencies — Stylesheet
    Mobile-first, no build tools
    =================================================== */
 
@@ -41,7 +41,7 @@ img { max-width: 100%; height: auto; display: block; }
   transition: box-shadow 0.2s;
 }
 
-.site-nav.scrolled { box-shadow: 0 2px 12px rgba(0,0,0,0.10); }
+.site-nav.scrolled { box-shadow: 0 2px 16px rgba(0,0,0,0.10); }
 
 .nav-inner {
   display: flex;
@@ -50,15 +50,45 @@ img { max-width: 100%; height: auto; display: block; }
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 1rem;
-  min-height: 60px;
+  min-height: 64px;
 }
 
+/* ---- Logo ---- */
 .nav-logo {
-  font-weight: 700;
-  font-size: 1.05rem;
-  color: var(--teal);
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
   text-decoration: none;
   flex-shrink: 0;
+}
+
+.nav-logo:hover { text-decoration: none; }
+
+.logo-tooth {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.logo-main {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--charcoal);
+  letter-spacing: -0.01em;
+}
+
+.logo-sub {
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: var(--teal);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 /* Hamburger */
@@ -87,7 +117,7 @@ img { max-width: 100%; height: auto; display: block; }
 .nav-links {
   display: none;
   position: absolute;
-  top: 60px;
+  top: 64px;
   left: 0;
   right: 0;
   background: var(--white);
@@ -123,40 +153,92 @@ img { max-width: 100%; height: auto; display: block; }
   display: inline-block;
   background: var(--teal);
   color: var(--white);
-  padding: 0.85rem 2rem;
+  padding: 0.9rem 2.2rem;
   border-radius: 8px;
   font-size: 1rem;
   font-weight: 700;
   text-decoration: none;
   border: none;
   cursor: pointer;
-  transition: background 0.2s, transform 0.15s;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 4px 14px rgba(11,110,110,0.35);
 }
 
 .btn-primary:hover {
   background: var(--teal-dark);
   text-decoration: none;
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(11,110,110,0.45);
 }
 
 .btn-full { width: 100%; text-align: center; }
 
-/* ---- Hero ---- */
+/* ---- Aurora Hero ---- */
+@keyframes aurora-shift {
+  0%   { background-position: 0% 50%, 0% 50%; }
+  50%  { background-position: 100% 50%, 100% 50%; }
+  100% { background-position: 0% 50%, 0% 50%; }
+}
+
 .hero {
+  position: relative;
   background: var(--teal);
   color: var(--white);
-  min-height: 80vh;
+  min-height: 85vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 4rem 1.5rem;
+  padding: 5rem 1.5rem;
+  overflow: hidden;
 }
 
-.hero-content { max-width: 680px; }
+.aurora {
+  position: absolute;
+  inset: -20px;
+  background-image:
+    repeating-linear-gradient(
+      100deg,
+      rgba(255,255,255,0.07) 0%,
+      rgba(255,255,255,0.07) 7%,
+      transparent 10%,
+      transparent 12%,
+      rgba(255,255,255,0.07) 16%
+    ),
+    repeating-linear-gradient(
+      100deg,
+      #0B6E6E 10%,
+      #1a9e9e 15%,
+      #0d8080 20%,
+      #5bc8c8 25%,
+      #0a5f5f 30%
+    );
+  background-size: 300% 300%, 200% 200%;
+  animation: aurora-shift 18s ease infinite;
+  opacity: 0.55;
+  filter: blur(12px);
+  mask-image: radial-gradient(ellipse at 80% 0%, black 20%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at 80% 0%, black 20%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+}
+
+.hero-location {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.75;
+  margin-bottom: 1rem;
+}
 
 .hero h1 {
-  font-size: 2rem;
+  font-size: 2.1rem;
   line-height: 1.2;
   margin-bottom: 1rem;
   font-weight: 800;
@@ -171,14 +253,14 @@ img { max-width: 100%; height: auto; display: block; }
 .hero strong { font-weight: 800; }
 
 /* ---- Sections ---- */
-.section { padding: 4rem 1rem; }
+.section { padding: 4.5rem 1rem; }
 .bg-light { background: var(--light); }
 
 .container { max-width: 1100px; margin: 0 auto; }
 .container--narrow { max-width: 680px; }
 
 .section-heading {
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   font-weight: 800;
   color: var(--charcoal);
   text-align: center;
@@ -202,19 +284,20 @@ img { max-width: 100%; height: auto; display: block; }
 
 .card {
   background: var(--white);
-  border-radius: 12px;
+  border-radius: 14px;
   padding: 2rem 1.5rem;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
   transition: transform 0.2s, box-shadow 0.2s;
   text-align: center;
+  border: 1px solid var(--border);
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.11);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.11);
 }
 
-.card-icon { font-size: 2rem; margin-bottom: 1rem; }
+.card-icon { font-size: 2.2rem; margin-bottom: 1rem; }
 
 .card h3 {
   font-size: 1.1rem;
@@ -230,7 +313,6 @@ img { max-width: 100%; height: auto; display: block; }
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0;
   margin-top: 2rem;
 }
 
@@ -241,8 +323,8 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .step-number {
-  width: 52px;
-  height: 52px;
+  width: 54px;
+  height: 54px;
   background: var(--teal);
   color: var(--white);
   border-radius: 50%;
@@ -252,6 +334,7 @@ img { max-width: 100%; height: auto; display: block; }
   font-size: 1.3rem;
   font-weight: 800;
   margin: 0 auto 1rem;
+  box-shadow: 0 4px 12px rgba(11,110,110,0.3);
 }
 
 .step h3 {
@@ -265,7 +348,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 .step-divider {
   width: 2px;
-  height: 40px;
+  height: 36px;
   background: var(--border);
 }
 
@@ -295,12 +378,12 @@ img { max-width: 100%; height: auto; display: block; }
 .form-group textarea {
   border: 1.5px solid var(--border);
   border-radius: 8px;
-  padding: 0.7rem 0.9rem;
+  padding: 0.75rem 0.9rem;
   font-size: 1rem;
   color: var(--charcoal);
   background: var(--white);
   font-family: inherit;
-  transition: border-color 0.15s;
+  transition: border-color 0.15s, box-shadow 0.15s;
   width: 100%;
 }
 
@@ -341,16 +424,29 @@ img { max-width: 100%; height: auto; display: block; }
 /* ---- Footer ---- */
 .site-footer {
   background: var(--charcoal);
-  color: rgba(255,255,255,0.7);
+  color: rgba(255,255,255,0.65);
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 2.5rem 1rem;
   font-size: 0.85rem;
 }
 
-.site-footer p + p { margin-top: 0.4rem; }
+.footer-logo {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.35rem;
+}
+
+.site-footer p + p { margin-top: 0.35rem; }
+
+.footer-copy {
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  opacity: 0.5;
+}
 
 .site-footer a {
-  color: rgba(255,255,255,0.85);
+  color: rgba(255,255,255,0.8);
   text-decoration: underline;
 }
 
@@ -388,12 +484,14 @@ img { max-width: 100%; height: auto; display: block; }
   .nav-links li a.nav-cta {
     background: var(--teal);
     color: var(--white);
-    padding: 0.5rem 1.1rem;
+    padding: 0.5rem 1.2rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(11,110,110,0.25);
   }
 
   .nav-links li a.nav-cta:hover { background: var(--teal-dark); }
 
-  .hero h1 { font-size: 3rem; }
+  .hero h1 { font-size: 3.2rem; }
 
   .card-grid { grid-template-columns: repeat(3, 1fr); }
 
@@ -406,7 +504,7 @@ img { max-width: 100%; height: auto; display: block; }
   .step-divider {
     width: 60px;
     height: 2px;
-    margin-top: 26px;
+    margin-top: 27px;
     align-self: flex-start;
   }
 }

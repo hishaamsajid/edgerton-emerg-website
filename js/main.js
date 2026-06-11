@@ -34,13 +34,36 @@
       });
     }
 
-    /* Form submission */
+    /* Form — AJAX submit to Formspree, stay on page */
     if (form && successMsg) {
       form.addEventListener('submit', function (e) {
         e.preventDefault();
-        form.hidden = true;
-        successMsg.hidden = false;
-        successMsg.focus();
+
+        var submitBtn = form.querySelector('[type="submit"]');
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending…';
+
+        fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        })
+        .then(function (res) {
+          if (res.ok) {
+            form.hidden = true;
+            successMsg.hidden = false;
+            successMsg.focus();
+          } else {
+            return res.json().then(function (data) {
+              throw new Error(data.errors ? data.errors.map(function(err){ return err.message; }).join(', ') : 'Submission failed');
+            });
+          }
+        })
+        .catch(function (err) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Submit My Booking Request';
+          alert('Sorry, something went wrong. Please try again or email us directly at edgertonemergencies@gmail.com\n\n' + err.message);
+        });
       });
     }
   });
