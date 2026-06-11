@@ -1,0 +1,405 @@
+/* =========================================================
+   Edgerton Emergency Services — Main Stylesheet
+   Mobile-first, no build tools, vanilla CSS
+   ========================================================= */
+
+/* ----- CSS Custom Properties ----- */
+:root {
+  --red:    #C0392B;
+  --white:  #fff;
+  --dark:   #222;
+  --gray:   #555;
+  --light:  #f5f5f5;
+  --border: #ddd;
+}
+
+/* ----- CSS Reset ----- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ----- Base Typography ----- */
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: var(--dark);
+  background: var(--white);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--red);
+}
+
+a:hover {
+  color: var(--dark);
+}
+
+/* ----- Skip Navigation ----- */
+.skip-nav {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: -999;
+}
+
+.skip-nav:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  z-index: 9999;
+  display: block;
+  padding: 0.5rem 1rem;
+  background: var(--red);
+  color: var(--white);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* ----- Screen-reader Only Utility ----- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ----- Site Header ----- */
+.site-header {
+  background: var(--dark);
+  color: var(--white);
+  padding: 0 1rem;
+  position: relative;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 56px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.site-title {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  flex-shrink: 0;
+}
+
+.site-title:hover {
+  color: var(--white);
+  opacity: 0.85;
+}
+
+/* ----- Hamburger Button (mobile only) ----- */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: var(--white);
+  border-radius: 2px;
+  transition: opacity 0.2s;
+}
+
+/* ----- Site Navigation ----- */
+.site-nav {
+  display: none; /* hidden by default on mobile */
+  width: 100%;
+  background: var(--dark);
+}
+
+.site-nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 0 1rem;
+}
+
+.site-nav li a {
+  display: block;
+  color: var(--white);
+  text-decoration: none;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+}
+
+.site-nav li a:hover {
+  text-decoration: underline;
+  color: var(--white);
+}
+
+/* Mobile nav open state */
+.site-header.nav-open .site-nav {
+  display: block;
+}
+
+/* ----- 911 Emergency Banner ----- */
+.emergency-banner {
+  background: var(--red);
+  color: var(--white);
+  text-align: center;
+  font-size: 1.1rem;
+  padding: 0.75rem;
+  font-weight: 600;
+}
+
+.emergency-banner a {
+  color: var(--white);
+  font-weight: 700;
+}
+
+.emergency-banner a:hover {
+  color: var(--white);
+  opacity: 0.85;
+}
+
+/* ----- Hero Section ----- */
+.hero {
+  background: var(--dark);
+  color: var(--white);
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.hero h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.25;
+}
+
+.hero p {
+  font-size: 1.05rem;
+  max-width: 640px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+/* ----- Page Sections ----- */
+.page-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+}
+
+.section-title {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: var(--dark);
+  border-bottom: 3px solid var(--red);
+  padding-bottom: 0.4rem;
+  display: inline-block;
+}
+
+/* ----- Card Grid ----- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+}
+
+/* ----- Service Cards ----- */
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.07);
+}
+
+.card h2,
+.card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--dark);
+}
+
+.card p {
+  color: var(--gray);
+  font-size: 0.95rem;
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 0.75rem;
+  color: var(--red);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.card a:hover {
+  text-decoration: underline;
+}
+
+/* ----- Alert List ----- */
+.alert-list {
+  list-style: none;
+}
+
+.alert-list li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.alert-list li:last-child {
+  border-bottom: none;
+}
+
+.alert-date {
+  background: var(--red);
+  color: var(--white);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.alert-type {
+  font-weight: 700;
+  color: var(--dark);
+  flex-shrink: 0;
+}
+
+.alert-desc {
+  color: var(--gray);
+  font-size: 0.95rem;
+}
+
+/* ----- Contact Table ----- */
+.contact-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  overflow-x: auto;
+  display: block;
+}
+
+.contact-table th,
+.contact-table td {
+  text-align: left;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--border);
+}
+
+.contact-table th {
+  background: var(--dark);
+  color: var(--white);
+  font-weight: 600;
+}
+
+.contact-table tbody tr:nth-child(even) {
+  background: var(--light);
+}
+
+.contact-table tbody tr:hover {
+  background: #e8e8e8;
+}
+
+/* ----- Footer ----- */
+.site-footer {
+  background: var(--dark);
+  color: var(--white);
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.85rem;
+  margin-top: 2rem;
+}
+
+.site-footer a {
+  color: var(--white);
+  opacity: 0.8;
+}
+
+.site-footer a:hover {
+  opacity: 1;
+  color: var(--white);
+}
+
+/* =========================================================
+   Desktop Styles — min-width: 769px
+   ========================================================= */
+@media (min-width: 769px) {
+
+  /* Hide hamburger on desktop */
+  .hamburger {
+    display: none;
+  }
+
+  /* Show nav as horizontal row */
+  .site-nav {
+    display: block;
+    width: auto;
+    background: transparent;
+  }
+
+  .site-nav ul {
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    gap: 0.25rem;
+  }
+
+  .site-nav li a {
+    padding: 0.5rem 0.75rem;
+  }
+
+  /* Hero heading larger on desktop */
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  /* Contact table no longer block-scrollable on desktop */
+  .contact-table {
+    display: table;
+  }
+}
