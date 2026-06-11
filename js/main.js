@@ -15,16 +15,6 @@
         nav.classList.remove('scrolled');
       }
 
-      /* Scroll showcase — 3D tilt unwinds as card scrolls into view */
-      var scrollCard = document.getElementById('scroll-card');
-      var showcase = document.getElementById('scroll-showcase');
-      if (scrollCard && showcase) {
-        var rect = showcase.getBoundingClientRect();
-        var progress = Math.min(1, Math.max(0, 1 - rect.top / window.innerHeight));
-        var rotateX = 20 - progress * 20;
-        var scale = 0.95 + progress * 0.05;
-        scrollCard.style.transform = 'rotateX(' + rotateX + 'deg) scale(' + scale + ')';
-      }
     }, { passive: true });
 
     /* Hamburger toggle */
