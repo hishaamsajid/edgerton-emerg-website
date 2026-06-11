@@ -15,6 +15,9 @@
       return; // nothing to do on pages without a header/hamburger
     }
 
+    hamburger.setAttribute('aria-expanded', 'false');
+    hamburger.setAttribute('aria-controls', 'site-nav');
+
     /* Toggle nav open/closed when hamburger is clicked */
     hamburger.addEventListener('click', function () {
       var isOpen = header.classList.toggle('nav-open');

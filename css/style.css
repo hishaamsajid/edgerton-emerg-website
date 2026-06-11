@@ -312,12 +312,15 @@ a:hover {
 }
 
 /* ----- Contact Table ----- */
+.table-scroll-wrapper {
+  overflow-x: auto;
+  width: 100%;
+}
+
 .contact-table {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.95rem;
-  overflow-x: auto;
-  display: block;
 }
 
 .contact-table th,
@@ -398,8 +401,4 @@ a:hover {
     font-size: 1.1rem;
   }
 
-  /* Contact table no longer block-scrollable on desktop */
-  .contact-table {
-    display: table;
-  }
 }
