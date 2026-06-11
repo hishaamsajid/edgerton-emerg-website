@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edgerton Emergency Services</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-nav" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="site-title">Edgerton Emergency Services</div>
+    <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-nav">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="alerts.html">Alerts</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="emergency-banner" role="alert" aria-live="polite">
+    <strong>Emergency? Call 911 immediately.</strong> For non-emergency calls, see <a href="contact.html">our contact page</a>.
+  </div>
+
+  <main id="main-content">
+    <section class="hero" aria-labelledby="hero-heading">
+      <h1 id="hero-heading">Serving and Protecting Edgerton</h1>
+      <p>Your local Fire Department, Emergency Medical Services, and Police Department — ready 24/7.</p>
+    </section>
+
+    <section class="page-section" aria-labelledby="services-heading">
+      <h2 id="services-heading">Our Services</h2>
+      <div class="card-grid">
+        <article class="card">
+          <h3>🔥 Fire Department</h3>
+          <p>24/7 fire suppression, rescue, and hazmat response.</p>
+          <a href="services.html#fire">Learn more</a>
+        </article>
+        <article class="card">
+          <h3>🚑 Emergency Medical Services</h3>
+          <p>Advanced life support and rapid response ambulance service.</p>
+          <a href="services.html#ems">Learn more</a>
+        </article>
+        <article class="card">
+          <h3>🚔 Police Department</h3>
+          <p>Community-focused law enforcement protecting Edgerton residents.</p>
+          <a href="services.html#police">Learn more</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="page-section" aria-labelledby="alerts-heading">
+      <h2 id="alerts-heading">Latest Alert</h2>
+      <div class="alert-item">
+        <span class="alert-date">Jun 10, 2026</span>
+        <span class="alert-type">Road Closure</span>
+        <span class="alert-desc">Mill Street closed for water main repair. Use Dodge Street as alternate route.</span>
+      </div>
+      <p><a href="alerts.html">View all alerts →</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 City of Edgerton, WI. All rights reserved.</p>
+    <p><a href="contact.html">Contact Us</a> | <a href="alerts.html">Alerts</a></p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
