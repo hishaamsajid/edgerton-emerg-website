@@ -354,6 +354,148 @@ img { max-width: 100%; height: auto; display: block; }
 
 .how-cta { text-align: center; margin-top: 2.5rem; }
 
+/* ---- Scroll Showcase (3D tilt on scroll) ---- */
+.scroll-showcase {
+  background: var(--charcoal);
+  padding: 3rem 1rem 5rem;
+  overflow: hidden;
+}
+
+.scroll-showcase-inner {
+  perspective: 1000px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.scroll-card {
+  transform: rotateX(20deg) scale(0.95);
+  transform-origin: center top;
+  transition: transform 0.1s linear;
+  border-radius: 20px;
+  border: 3px solid #444;
+  background: #1a1a1a;
+  box-shadow:
+    0 0 0 0 #0000004d,
+    0 9px 20px #0000004a,
+    0 37px 37px #00000042,
+    0 84px 50px #00000026;
+  padding: 10px;
+}
+
+.scroll-card-screen {
+  background: #f3f4f6;
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 1.5rem;
+}
+
+/* Mock UI inside card */
+.mock-ui-header {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 1rem;
+}
+
+.mock-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--border);
+}
+
+.mock-dot:first-child { background: #ff5f57; }
+.mock-dot:nth-child(2) { background: #febc2e; }
+.mock-dot:nth-child(3) { background: #28c840; }
+
+.mock-ui-body { display: flex; flex-direction: column; gap: 0.75rem; }
+
+.mock-line {
+  height: 14px;
+  background: var(--border);
+  border-radius: 4px;
+}
+
+.mock-line--title { width: 55%; height: 22px; background: #d1d5db; }
+.mock-line--sub   { width: 35%; }
+
+.mock-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.mock-card-item {
+  height: 80px;
+  background: var(--white);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.mock-btn {
+  width: 140px;
+  height: 36px;
+  background: var(--teal);
+  border-radius: 8px;
+  opacity: 0.8;
+  margin: 0.25rem auto 0;
+}
+
+/* ---- Location Section ---- */
+.location-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.location-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.location-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.location-icon {
+  font-size: 1.6rem;
+  flex-shrink: 0;
+  line-height: 1;
+  margin-top: 0.1rem;
+}
+
+.location-card h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: 0.25rem;
+}
+
+.location-card p {
+  font-size: 0.9rem;
+  color: var(--gray);
+  line-height: 1.5;
+}
+
+.location-map {
+  height: 320px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.location-map iframe { display: block; }
+
 /* ---- Booking Form ---- */
 .booking-form { margin-top: 2rem; }
 
@@ -494,6 +636,13 @@ img { max-width: 100%; height: auto; display: block; }
   .hero h1 { font-size: 3.2rem; }
 
   .card-grid { grid-template-columns: repeat(3, 1fr); }
+
+  .location-grid {
+    grid-template-columns: 1fr 1.4fr;
+    align-items: start;
+  }
+
+  .location-map { height: 380px; }
 
   .steps {
     flex-direction: row;
