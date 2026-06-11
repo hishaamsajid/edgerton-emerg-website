@@ -3,78 +3,162 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Edgerton Emergency Services</title>
+  <title>Emergency Dental Care — Same-Day Private Appointments</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <a class="skip-nav" href="#main-content">Skip to main content</a>
 
-  <header class="site-header">
-    <div class="header-inner">
-      <div class="site-title">Edgerton Emergency Services</div>
-      <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-nav">
-        <span></span>
-        <span></span>
-        <span></span>
+  <!-- STICKY NAV -->
+  <header class="site-nav" id="site-nav">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo">🦷 Emergency Dental Care</a>
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
       </button>
-      <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+      <nav id="nav-links" class="nav-links" aria-label="Main navigation">
         <ul>
-          <li><a href="index.html" aria-current="page">Home</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="alerts.html">Alerts</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#why-us">Why Us</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#book" class="nav-cta">Book Now</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <div class="emergency-banner" role="note">
-    <strong>Emergency? Call 911 immediately.</strong> For non-emergency calls, see <a href="contact.html">our contact page</a>.
-  </div>
+  <!-- HERO -->
+  <section class="hero" id="home" aria-labelledby="hero-heading">
+    <div class="hero-content">
+      <h1 id="hero-heading">Emergency Dental Care,<br>When You Need It Most</h1>
+      <p>Same-day private appointments available. Fixed price — <strong>£200.</strong></p>
+      <a href="#book" class="btn-primary">Get Booked In Now →</a>
+    </div>
+  </section>
 
-  <main id="main-content">
-    <section class="hero" aria-labelledby="hero-heading">
-      <h1 id="hero-heading">Serving and Protecting Edgerton</h1>
-      <p>Your local Fire Department, Emergency Medical Services, and Police Department — ready 24/7.</p>
-    </section>
-
-    <section class="page-section" aria-labelledby="services-heading">
-      <h2 id="services-heading" class="section-title">Our Services</h2>
+  <!-- WHY CHOOSE US -->
+  <section class="section bg-light" id="why-us" aria-labelledby="why-heading">
+    <div class="container">
+      <h2 id="why-heading" class="section-heading">Why Choose Us</h2>
       <div class="card-grid">
         <article class="card">
-          <h3><span aria-hidden="true">🔥</span> Fire Department</h3>
-          <p>24/7 fire suppression, rescue, and hazmat response.</p>
-          <a href="services.html#fire">Learn more <span class="sr-only">about Fire Department</span></a>
+          <div class="card-icon">⚡</div>
+          <h3>Same-Day Appointments</h3>
+          <p>We understand dental emergencies can't wait. We'll get you seen the same day, fast.</p>
         </article>
         <article class="card">
-          <h3><span aria-hidden="true">🚑</span> Emergency Medical Services</h3>
-          <p>Advanced life support and rapid response ambulance service.</p>
-          <a href="services.html#ems">Learn more <span class="sr-only">about Emergency Medical Services</span></a>
+          <div class="card-icon">💷</div>
+          <h3>Fixed £200 Fee — No Surprises</h3>
+          <p>One flat fee covers your emergency consultation and treatment. No hidden costs, ever.</p>
         </article>
         <article class="card">
-          <h3><span aria-hidden="true">🚔</span> Police Department</h3>
-          <p>Community-focused law enforcement protecting Edgerton residents.</p>
-          <a href="services.html#police">Learn more <span class="sr-only">about Police Department</span></a>
+          <div class="card-icon">🏥</div>
+          <h3>Experienced Emergency Dentists</h3>
+          <p>Our team specialises in dental emergencies and will have you pain-free as quickly as possible.</p>
         </article>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="page-section" aria-labelledby="alerts-heading">
-      <h2 id="alerts-heading" class="section-title">Latest Alert</h2>
-      <ul class="alert-list">
-        <li class="alert-item">
-          <span class="alert-date">Jun 10, 2026</span>
-          <span class="alert-type">Road Closure</span>
-          <span class="alert-desc">Mill Street closed for water main repair. Use Dodge Street as alternate route.</span>
-        </li>
-      </ul>
-      <p><a href="alerts.html">View all alerts →</a></p>
-    </section>
-  </main>
+  <!-- HOW IT WORKS -->
+  <section class="section" id="how-it-works" aria-labelledby="how-heading">
+    <div class="container">
+      <h2 id="how-heading" class="section-heading">How It Works</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Fill In the Form</h3>
+          <p>Tell us your details and what's happened — takes less than 2 minutes.</p>
+        </div>
+        <div class="step-divider" aria-hidden="true"></div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>We Call You Back</h3>
+          <p>Our team will call to confirm your appointment time, usually within 30 minutes.</p>
+        </div>
+        <div class="step-divider" aria-hidden="true"></div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Come In and Get Treated</h3>
+          <p>Arrive at your appointment and our dentist will get you sorted quickly and comfortably.</p>
+        </div>
+      </div>
+      <div class="how-cta">
+        <a href="#book" class="btn-primary">Get Booked In Now →</a>
+      </div>
+    </div>
+  </section>
 
+  <!-- BOOKING FORM -->
+  <section class="section bg-light" id="book" aria-labelledby="book-heading">
+    <div class="container container--narrow">
+      <h2 id="book-heading" class="section-heading">Book Your Emergency Appointment</h2>
+      <p class="section-sub">Fill in your details below and we'll call you back to confirm your same-day appointment.</p>
+
+      <form class="booking-form" id="booking-form" novalidate>
+        <div class="form-group">
+          <label for="full-name">Full Name <span class="required" aria-hidden="true">*</span></label>
+          <input type="text" id="full-name" name="full-name" required autocomplete="name" placeholder="e.g. Sarah Johnson">
+        </div>
+
+        <div class="form-group">
+          <label for="dob">Date of Birth <span class="required" aria-hidden="true">*</span></label>
+          <input type="date" id="dob" name="dob" required>
+        </div>
+
+        <div class="form-group">
+          <label for="emergency-cause">Cause of Emergency <span class="required" aria-hidden="true">*</span></label>
+          <select id="emergency-cause" name="emergency-cause" required>
+            <option value="" disabled selected>Please select...</option>
+            <option value="toothache">Severe Toothache</option>
+            <option value="broken">Broken / Chipped Tooth</option>
+            <option value="filling">Lost Filling or Crown</option>
+            <option value="knocked-out">Knocked Out Tooth</option>
+            <option value="abscess">Swollen Jaw or Abscess</option>
+            <option value="bleeding">Bleeding Gums</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="address">Address <span class="required" aria-hidden="true">*</span></label>
+          <textarea id="address" name="address" required rows="3" placeholder="Your home address"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number <span class="required" aria-hidden="true">*</span></label>
+          <input type="tel" id="phone" name="phone" required autocomplete="tel" placeholder="e.g. 07700 900000">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address <span class="required" aria-hidden="true">*</span></label>
+          <input type="email" id="email" name="email" required autocomplete="email" placeholder="e.g. you@example.com">
+        </div>
+
+        <div class="form-group">
+          <label for="notes">Any Additional Notes <span class="optional">(optional)</span></label>
+          <textarea id="notes" name="notes" rows="3" placeholder="Anything else we should know?"></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary btn-full">Submit My Booking Request</button>
+
+        <p class="form-small-print">By submitting this form you agree to be contacted regarding your appointment. We aim to call back within 30 minutes during working hours.</p>
+      </form>
+
+      <!-- Success message (hidden until form submitted) -->
+      <div class="form-success" id="form-success" hidden aria-live="polite">
+        <div class="success-icon">✅</div>
+        <h3>Thank you!</h3>
+        <p>We'll call you back shortly to confirm your appointment.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer class="site-footer">
-    <p>© 2026 City of Edgerton, WI. All rights reserved.</p>
-    <p><a href="contact.html">Contact Us</a> | <a href="alerts.html">Alerts</a></p>
+    <div class="container">
+      <p>© 2026 Emergency Dental Care. All rights reserved.</p>
+      <p><a href="mailto:contact@emergencydentalcare.co.uk">contact@emergencydentalcare.co.uk</a></p>
+    </div>
   </footer>
 
   <script src="js/main.js"></script>
