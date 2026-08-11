@@ -173,6 +173,34 @@ img { max-width: 100%; height: auto; display: block; }
 
 .btn-full { width: 100%; text-align: center; }
 
+.btn-call {
+  display: inline-block;
+  background: var(--white);
+  color: var(--teal-dark);
+  padding: 0.9rem 2.2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+}
+
+.btn-call:hover {
+  background: #EAF6F6;
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+.nav-links li a.nav-call {
+  color: var(--teal);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
 /* ---- Aurora Hero ---- */
 @keyframes aurora-shift {
   0%   { background-position: 0% 50%, 0% 50%; }
@@ -456,6 +484,64 @@ img { max-width: 100%; height: auto; display: block; }
   color: var(--gray);
 }
 
+/* ---- Team ---- */
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.team-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 2rem;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+}
+
+.team-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--teal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin-bottom: 1.1rem;
+}
+
+.team-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: 0.9rem;
+  line-height: 1.4;
+}
+
+.team-quals {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--gray);
+  margin-top: 0.2rem;
+}
+
+.team-bio {
+  color: var(--gray);
+  font-size: 0.92rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.team-gdc {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--teal-dark);
+  letter-spacing: 0.02em;
+}
+
 /* ---- Steps ---- */
 .steps {
   display: flex;
@@ -606,6 +692,26 @@ img { max-width: 100%; height: auto; display: block; }
   line-height: 1.5;
 }
 
+.form-consent { margin-bottom: 1.5rem; }
+
+.checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+  color: var(--gray);
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+  accent-color: var(--teal);
+}
+
 /* Success message */
 .form-success {
   text-align: center;
@@ -701,6 +807,8 @@ img { max-width: 100%; height: auto; display: block; }
   }
 
   .card-grid { grid-template-columns: repeat(3, 1fr); }
+
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
 
   .location-grid {
     grid-template-columns: 1fr 1.4fr;

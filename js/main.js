@@ -35,6 +35,15 @@
       });
     }
 
+    /* Track click-to-call taps as a conversion signal */
+    document.querySelectorAll('a[href^="tel:"]').forEach(function (link) {
+      link.addEventListener('click', function () {
+        if (typeof gtag === 'function') {
+          gtag('event', 'click_to_call', { event_category: 'phone' });
+        }
+      });
+    });
+
     /* Form — AJAX submit to Formspree, stay on page */
     if (form && successMsg) {
       form.addEventListener('submit', function (e) {
@@ -54,6 +63,9 @@
             form.hidden = true;
             successMsg.hidden = false;
             successMsg.focus();
+            if (typeof gtag === 'function') {
+              gtag('event', 'generate_lead', { event_category: 'booking_form' });
+            }
           } else {
             return res.json().then(function (data) {
               throw new Error(data.errors ? data.errors.map(function(err){ return err.message; }).join(', ') : 'Submission failed');

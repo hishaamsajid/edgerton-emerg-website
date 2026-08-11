@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://huddersfieldemergencies.co.uk/sitemap.xml
