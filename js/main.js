@@ -35,6 +35,33 @@
       });
     }
 
+    /* "Open now" badge — clinic hours are 9am–10pm UK time, every day */
+    var status = document.getElementById('open-status');
+    if (status && window.Intl) {
+      var hour = parseInt(new Intl.DateTimeFormat('en-GB', { hour: 'numeric', hourCycle: 'h23', timeZone: 'Europe/London' }).format(new Date()), 10);
+      var isOpen = hour >= 9 && hour < 22;
+      status.classList.toggle('is-open', isOpen);
+      status.querySelector('.status-text').textContent = isOpen
+        ? 'Open now · until 10pm tonight'
+        : 'Closed now · opens 9am · book online';
+    }
+
+    /* Fade sections in as they scroll into view */
+    var reveals = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '0px 0px -8% 0px' });
+      reveals.forEach(function (el) { observer.observe(el); });
+    } else {
+      reveals.forEach(function (el) { el.classList.add('is-visible'); });
+    }
+
     /* Track click-to-call taps as a conversion signal */
     document.querySelectorAll('a[href^="tel:"]').forEach(function (link) {
       link.addEventListener('click', function () {
@@ -62,6 +89,7 @@
           if (res.ok) {
             form.hidden = true;
             successMsg.hidden = false;
+            successMsg.scrollIntoView({ block: 'center' });
             successMsg.focus();
             if (typeof gtag === 'function') {
               gtag('event', 'generate_lead', { event_category: 'booking_form' });
